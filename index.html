@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<script>
+
+
+
+
+
+function calculateCircumference () {
+
+	var state = true;
+	
+	document.getElementById("circumference").value = "";
+	document.getElementById("area").value = "";
+	
+	
+        var element = document.getElementById("aLength").getElementsByTagName("div");
+        if(element[0] !=undefined)
+		document.getElementById("aLength").removeChild(element[0]);
+        
+		
+	var element = document.getElementById("bLength").getElementsByTagName("div");
+        if(element[0] !=undefined)
+        document.getElementById("bLength").removeChild(element[0]);
+
+	
+	
+	var a = parseFloat(document.getElementById("lengthA").value);
+	var b= parseFloat(document.getElementById("lengthB").value);
+	
+	if(!Number.isFinite(a)|| a < 1){
+		var divError = document.createElement("div");
+        divError.className = "errorDivElement";
+        var node = document.createTextNode("Wrong Input! Must be a number!");
+        divError.appendChild(node);
+        document.getElementById("aLength").appendChild(divError);
+		state=false;
+        
+	}
+	
+	if(!Number.isFinite(b)|| b < 1){
+		var divError = document.createElement("div");
+        divError.className = "errorDivElement";
+        var node = document.createTextNode("Wrong Input! Must be a number!");
+        divError.appendChild(node);
+        document.getElementById("bLength").appendChild(divError);
+		state=false;
+        
+	}
+	
+	if(state==true){
+	var circ = 2*(a+b);
+	$("#circumference").val(circ);
+
+	}
+	else{
+	$("#circumference").val(" ");
+	}
+	
+}
+
+function calculateArea () {
+
+	var state=true;
+
+	document.getElementById("circumference").value = "";
+	document.getElementById("area").value = "";
+	var element = document.getElementById("bLength").getElementsByTagName("div");
+        if(element[0] !=undefined)
+        document.getElementById("bLength").removeChild(element[0]);
+		
+	var element = document.getElementById("aLength").getElementsByTagName("div");
+        if(element[0] !=undefined)
+        document.getElementById("aLength").removeChild(element[0]);
+	
+	
+	var a = parseFloat(document.getElementById("lengthA").value);
+	var b= parseFloat(document.getElementById("lengthB").value);
+	
+	if(!Number.isFinite(a)|| a < 1){
+		var divError = document.createElement("div");
+        divError.className = "errorDivElement";
+        var node = document.createTextNode("Wrong Input! Must be a number!");
+        divError.appendChild(node);
+        document.getElementById("aLength").appendChild(divError);
+		state=false;
+        
+	}
+	
+	if(!Number.isFinite(b)|| b < 1){
+		var divError = document.createElement("div");
+        divError.className = "errorDivElement";
+        var node = document.createTextNode("Wrong Input! Must be a number!");
+        divError.appendChild(node);
+        document.getElementById("bLength").appendChild(divError);
+		state=false;
+        
+	}
+	
+	if(state==true){
+	var area = a*b;
+	$("#area").val(area);
+	}
+	else{
+	$("#area").val("");
+	}
+	
+}
+
+
+
+</script>
+
+<body>
+
+<form>
+<table class="calculator">
+
+<tr>
+<td colspan="2" id="title">Rectangle calculator</td>
+<tr>
+
+<tr>
+<td> length of a</td>
+<td id="aLength"><input type="text" id="lengthA"></td>
+</tr>
+
+<tr>
+<td> length of b</td>
+<td id="bLength"><input type="text" id="lengthB"></td>
+</tr>
+
+<tr>
+<td>Circumference</td>
+<td><input type="text" id="circumference"></td>
+</tr>
+
+<tr>
+<td>Area</td>
+<td><input type="text" id="area"></td>
+</tr>
+
+<tr>
+<td><button type="button" onclick="calculateCircumference()">Calculate circumference</button></td>
+<td><button type="button" onclick="calculateArea()">Calculate area</button></td>
+</tr>
+
+
+</table>
+</form>
+
+
+</body>
+</html>

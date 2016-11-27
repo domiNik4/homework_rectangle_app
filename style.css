@@ -1,0 +1,49 @@
+.calculator{
+	margin:0 auto;
+	margin-top:20px;
+	border-collapse: collapse;
+	box-shadow: 5px 5px 10px #888888;
+	border: 5px solid  #000099;
+	
+}
+#title{
+	text-align:center;
+}
+
+
+
+td{
+	
+	
+	font-weight:bold;
+	color: #000099;
+	background-color:#809fff;
+	padding:10px;
+	font-family:arial;
+	
+	
+}
+
+button {
+	margin: auto;
+	display: block;
+	border: none;
+	background-color: #000099;
+	color:#809fff;
+	padding: 10px;
+	border-radius:5px;
+	
+}
+
+input {
+    border: 2px white;
+	background-color: #000099;
+	color:#809fff;
+    border-radius: 4px;
+	outline: none;
+	padding: 10px;
+}
+
+.errorDivElement{
+	color: #e6005c;
+}
